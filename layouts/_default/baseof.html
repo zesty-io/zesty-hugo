@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/site.css"/>
+    </head>
+
+    <body>
+
+   
+
+    {{ block "header" . }}{{ partial "site-header.html" . }}{{ end }}
+        {{ block "content" .}}{{end}}
+        {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+
+    </body>
+</html>

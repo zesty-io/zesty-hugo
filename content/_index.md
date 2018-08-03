@@ -1,5 +1,5 @@
 ---
-`parent_zuid`: 0
+parent_zuid`: 0
 sort: 0
 _item_zuid: 7-4ad498-k2cldb
 _version_zuid: 9-640368-k780sx
@@ -16,6 +16,9 @@ deleted2: <p>MUI is a lightweight CSS framework that follows Google's Material D
 splash_description: null
 splash_link: null
 splash_link_text: null
-splash_background: null
+splash_background: https://placehold.it/500/500
 subtitle: null
+type: base
 ---
+
+fdsfs
