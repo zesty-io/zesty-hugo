@@ -1,0 +1,16 @@
+
+
+    {{ $stylesheet := .Site.Data.webpack_assets.app }}
+    {{ with $stylesheet.css }}
+      <link href="{{ relURL (printf "%s%s" "dist/" .) }}" rel="stylesheet">
+    {{ end }}
+    {{ range .Site.Params.custom_css }}
+      <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+    {{ end }}
+
+    {{ block "header" . }}{{ partial "site-header.html" . }}{{ end }}
+
+    <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+        {{ .Params.content }}
+      </article>
+    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
