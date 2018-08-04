@@ -1,37 +1,18 @@
-{{ define "content" }}
-  
-<section class="site-section" id="section-about">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5 site-animate mb-5">
-              <h4 class="site-sub-title">Events</h4>
-                <h2 class="site-primary-title display-4">{{.Params.title}}</h2>
-                <p>{{.Params.description}}</p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
-                <img src="{{.Params.image}}" alt="{{.Params.image}}" class="img-fluid">
-            </div>
+    {{ define "content" }}
+    <section class="site-section" id="section-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Our Story</h4>
+			  <h2 class="site-primary-title display-4">{{.Params.header}}</h2>
+			  {{.Params.description}}
+			  <p><a href="{{.Params.link_destination}}" class="btn btn-secondary btn-lg">{{.Params.link_title}}</a></p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="{{.Params.image}}" alt="" class="img-fluid">
           </div>
         </div>
-      </section>
-      <section class="site-section" id="section-events">
-                    <div class="container">
-  
-      {{range $.Page.Site.Data.events.data }}
-                        
-                        <div class="card">
-                            
-                            <div class="card-body">
-                                <h5 class="card-title">{{.name}}</h5>
-                                <p class="card-text">On {{.date}} at all locations worldwide.</p>
-                                <a href="/-/custom/event.ics?id={{._item_zuid}}" class="btn btn-primary">Add to Calendar</a>
-                                <a href="{{.name}}" class="btn btn-primary">View Event Page </a>
-                            </div>
-                        </div>
-      {{end}}
-          </div>
-  </section>
-  
-  
-{{ end }}
+      </div>
+    </section>
+    {{ end }}
