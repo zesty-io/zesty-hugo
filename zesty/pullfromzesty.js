@@ -7,7 +7,7 @@ function createMDForJSON(json, fileName) {
     Object.keys(json).forEach(function(k) {
         // do something with obj[key]
         var key = k
-        if (key[0] = '`') {
+        if (key[0] === '`') {
           key = key.substr(1)
         }
         output += key + ": " + json[key] + "\n"
@@ -51,7 +51,7 @@ request('http://burger.zesty.site/-/basic-content/' + args[0] + '.json', functio
               console.log("@@@")
               console.log(final)
               console.log("@@@")
-              createMDForJSON(final[key], (args[1] + "/" + key + ".md"))
+              createMDForJSON(final[key], (args[1] + "/" + final[key]['name'] + ".md"))
             })
         }
     }
