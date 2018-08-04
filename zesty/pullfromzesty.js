@@ -4,8 +4,12 @@ var fs = require('fs')
 
 function createMDForJSON(json, fileName) {
     var output = "---\n"
-    Object.keys(json).forEach(function(key) {
+    Object.keys(json).forEach(function(k) {
         // do something with obj[key]
+        var key = k
+        if (key[0] = '`') {
+          key = key.substr(1)
+        }
         output += key + ": " + json[key] + "\n"
     });
     output += "---"
