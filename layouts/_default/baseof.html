@@ -9,8 +9,11 @@
    
 
     {{ block "header" . }}{{ partial "site-header.html" . }}{{ end }}
-        {{ block "content" .}}{{end}}
-        {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+    {{ block "content" .}}{{end}}
+    {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
+    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
 
+    
     </body>
+
 </html>

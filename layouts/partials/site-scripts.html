@@ -1,1 +1,8 @@
 <script src="/js/site.js"></script>
+<script>
+        var anims = document.getElementsByClassName("site-animate");
+        for (var j =0; j<anims.length;j++) {
+            anims[j].classList.remove("site-animate");
+            j--;
+        }
+    </script>

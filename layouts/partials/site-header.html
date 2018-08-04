@@ -9,30 +9,15 @@
               <div class="collapse navbar-collapse" id="site-nav">
                     <ul class="navbar-nav ml-auto">
 
-                    {{ $paginator := .Paginate (where .Pages "Type" "base") }}
-                    {{ template "_internal/pagination.html" . }}
-                    {{ range $paginator.Pages }}
-                    
       
-                  <li class="nav-item active"><a href="#section-home" class="nav-link">{{.Title}}</a></li>
-                {{ end }}
+                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="/about" class="nav-link">about</a></li>
+                    <li class="nav-item active"><a href="/events" class="nav-link">Events</a></li>
+
+            
             </ul>
 
               </div>
             </div>
           </nav>
       
-      <script>
-          
-          var navUL = document.getElementById("nav");
-          navUL.classList.add("navbar-nav");
-          navUL.classList.add("ml-auto");
-          var lis = navUL.getElementsByTagName("li");
-          for (var j =0; j<lis.length; j++) {
-              lis[j].classList.add("nav-item");
-              var a = lis[j].getElementsByTagName("a")[0]
-              a.classList.add("nav-link");
-          }
-          
-          
-      </script>
