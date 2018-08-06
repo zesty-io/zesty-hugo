@@ -1,0 +1,13 @@
+instanceURL = "http://burger.zesty.site"
+
+[contentZuids]
+    [contentZuids.arrays] 
+        6-34238974 = "content/events"
+        6-43242343 = "content/menu"
+    
+    [contentZuids.items]
+        7-43288479 = "content/about.md"
+        7-48237482 = "content/_index.md"
+    
+    
+    

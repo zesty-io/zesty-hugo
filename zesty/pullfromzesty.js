@@ -1,6 +1,7 @@
 const args = process.argv.slice(2) // get rid of the unneccesary arguments
 const request = require('request') // to make the GET Request
 const fs = require('fs') // to edit the file
+const mkdirp = require('mkdirp')
 
 function createMDForJSON(json, fileName) {
     let output = `---\n`
@@ -14,13 +15,17 @@ function createMDForJSON(json, fileName) {
         output += `${key}: ${json[key]}\n`
     }
     output += "---"
-
-    fs.writeFile(fileName, output, (err) => {
-        if (err) {
-            return console.log(err)
-        }
-        console.log(`Markdown File Created at ${fileName}`)
+    let directory = fileName.substring(0, fileName.lastIndexOf("/"));
+    if (directory === "") {directory = "."}
+    mkdirp(directory, (err) => {
+        fs.writeFile(fileName, output, (err) => {
+            if (err) {
+                return console.log(err)
+            }
+            console.log(`Markdown File Created at ${fileName}`)
+        })
     })
+    
 }
 
 request(`http://burger.zesty.site/-/basic-content/${args[0]}.json`, (error, response, body) => {
