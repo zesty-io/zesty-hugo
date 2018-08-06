@@ -1,41 +1,41 @@
-var args = process.argv.slice(2)
-var request = require('request');
-var fs = require('fs')
+const args = process.argv.slice(2) // get rid of the unneccesary arguments
+const request = require('request') // to make the GET Request
+const fs = require('fs') // to edit the file
 
 function createMDForJSON(json, fileName) {
-    var output = "---\n"
-    Object.keys(json).forEach(function(k) {
-        // do something with obj[key]
-        var key = k
+    let output = `---\n`
+
+    for (let k in json) {
+        let key = k
         if (key[0] === '`') {
-          key = key.substr(1)
+            key = key.substr(1)
         }
-        output += key + ": " + json[key] + "\n"
-    });
+        output += `${key}: ${json[key]}\n`
+    }
     output += "---"
 
     fs.writeFile(fileName, output, (err) => {
         if (err) {
             return console.log(err)
         }
-        console.log("Markdown File Created at " + args[1] + ".md")
+        console.log(`Markdown File Created at ${args[1]}.md`)
     })
 }
-request('http://burger.zesty.site/-/basic-content/' + args[0] + '.json', function(error, response, body) {
+
+request(`http://burger.zesty.site/-/basic-content/${args[0]}.json`, (error, response, body) => {
     if (!error && response.statusCode == 200) {
-        if (args[0][0] == "7") {
-            var json = JSON.parse(body)
-            createMDForJSON(json['data'], args[1])
+        if (args[0][0] == `7`) {
+            createMDForJSON(JSON.parse(body)['data'], args[1])
         }
-        else if (args[0][0] == "6") {
-            var json = JSON.parse(body)
-            var output = "---\n"
-            var final = {}
-            // first, we refine all of our items and get only the latest versions
-            Object.keys(json['data']).forEach(function(key) {
-                var dict = json['data'][key]
-                var z = dict['_item_zuid']
-                var version = dict['_version']
+        else if (args[0][0] == `6`) {
+            let json = JSON.parse(body)
+            let output = `---\n`
+            let final = {}
+            // first, we refine the array so we only have the latest version of each item
+            for (var key in json['data']) {
+                let dict = json['data'][key]
+                let z = dict['_item_zuid']
+                let version = dict['_version']
                 if (z in final) {
                   if (final[z]['_version'] < version) {
                     final[z] = dict
@@ -44,15 +44,12 @@ request('http://burger.zesty.site/-/basic-content/' + args[0] + '.json', functio
                 else {
                   final[z] = dict
                 }
-            });
+            }
             // now, final is a dictionary that stores the zuid of each item. 
-            Object.keys(final).forEach(function(key) {
+            for (let key in final) {
               // lets now take each item of json and create the markdown file
-              console.log("@@@")
-              console.log(final)
-              console.log("@@@")
-              createMDForJSON(final[key], (args[1] + "/" + final[key]['name'] + ".md"))
-            })
+              createMDForJSON(final[key], `${args[1]}/${final[key]['_meta_title']}.md`)
+            }
         }
     }
 })
