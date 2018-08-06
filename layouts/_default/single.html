@@ -4,14 +4,14 @@
         <div class="container">
                     <div class="row">
             <div class="col-md-5 site-animate mb-5">
-                <h2 class="site-primary-title display-4">{{.Params.name}}</h2>
-                <h3>{{.Params.date}}</h3>
-                <p>{{.Params.description}}</p>
-                <p><a href="http://burger.zesty.site/-/custom/event.ics?id={{.Params._item_zuid}}" class="btn btn-secondary btn-lg">Add to Calendar</a></p>
+                <h2 class="site-primary-title display-4">{{ with .Params.name }}{{ . | safeHTML }}{{ end }}</h2>
+                <h3>{{ with .Params.date }}{{ . | safeHTML }}{{ end }}</h3>
+                <p>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
+                <p><a href="{{ with .Params.link_destination }}{{ . | safeHTML }}{{ end }}" class="btn btn-secondary btn-lg">{{ with .Params.link_title }}{{ . | safeHTML }}{{ end }}</a></p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
-              <img src="https://6c706l48.media.zestyio.com/zestyteam.jpg" alt="Free Template by colorlib.com" class="img-fluid">
+              <img src="{{ with .Params.image }}{{ . | safeHTML }}{{ end }}" alt="Free Template by colorlib.com" class="img-fluid">
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ function createMDForJSON(json, fileName) {
         if (key[0] === '`') {
             key = key.substr(1)
         }
+        key = key.replace(/(?:\r\n|\r|\n)/g, '<br>');
         output += `${key}: ${json[key]}\n`
     }
     output += "---"
@@ -18,7 +19,7 @@ function createMDForJSON(json, fileName) {
         if (err) {
             return console.log(err)
         }
-        console.log(`Markdown File Created at ${args[1]}.md`)
+        console.log(`Markdown File Created at ${fileName}`)
     })
 }
 

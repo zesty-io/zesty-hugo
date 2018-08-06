@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/css/site.css"/>
+        {{ block "stylesheets" . }}{{ partial "site-stylesheets.html" . }}{{ end }}
     </head>
 
     <body>

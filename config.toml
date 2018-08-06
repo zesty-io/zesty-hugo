@@ -2,3 +2,24 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 theme = ""
 title = ""
+sectionPagesMenu = "main"
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 100
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    url = "/about/"
+    weight = 101
+
+  [[menu.main]]
+    identifier = "events"
+    name = "events"
+    url = "/events/"
+    weight = 102
+
