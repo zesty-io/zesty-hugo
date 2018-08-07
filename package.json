@@ -1,0 +1,23 @@
+{
+  "name": "hugozestyexample",
+  "version": "1.0.0",
+  "description": "## What is this?",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node zesty/pullfromzesty.js zesty.yaml --verbose ; hugo ; hugo server -D"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronakdev/hugo-project.git"
+  },
+  "author": "ronakdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronakdev/hugo-project/issues"
+  },
+  "homepage": "https://github.com/ronakdev/hugo-project#readme"
+}
