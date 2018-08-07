@@ -1,61 +1,148 @@
-const args = process.argv.slice(2) // get rid of the unneccesary arguments
+/**
+    running this project: 
+    node pullfromzesty.js <config_file> [--verbose]
+    if no config file is specified, this will look for one in the current directory called zesty.json
+    config files supported: .json, .yaml, .toml
+ */
+//  Imports
 const request = require('request') // to make the GET Request
 const fs = require('fs') // to edit the file
 const mkdirp = require('mkdirp')
+const matter = require('gray-matter')
+const chalk = require('chalk')
+const args = process.argv.slice(2) // get rid of the unneccesary arguments
 
-function createMDForJSON(json, fileName) {
-    let output = `---\n`
+let configFile = "zesty.json"
+let verbose = (process.argv.indexOf('--verbose') != -1) ? true : false
 
-    for (let k in json) {
-        let key = k
-        if (key[0] === '`') {
-            key = key.substr(1)
-        }
-        key = key.replace(/(?:\r\n|\r|\n)/g, '<br>');
-        output += `${key}: ${json[key]}\n`
-    }
-    output += "---"
-    let directory = fileName.substring(0, fileName.lastIndexOf("/"));
-    if (directory === "") {directory = "."}
-    mkdirp(directory, (err) => {
-        fs.writeFile(fileName, output, (err) => {
-            if (err) {
-                return console.log(err)
-            }
-            console.log(`Markdown File Created at ${fileName}`)
-        })
-    })
-    
+if (verbose) { console.log(chalk.black.bgYellow('Verbose Mode On')) }
+
+if (!args[0]) {
+    if (verbose) { console.log(`No specified config, trying default ${chalk.white.bgMagenta("zesty.json")}`) }
+}
+else {
+    if (verbose) { console.log(`Using specified config file ${chalk.white.bgMagenta(args[0])}`) }
+    configFile = args[0]
 }
 
-request(`http://burger.zesty.site/-/basic-content/${args[0]}.json`, (error, response, body) => {
-    if (!error && response.statusCode == 200) {
-        if (args[0][0] == `7`) {
-            createMDForJSON(JSON.parse(body)['data'], args[1])
-        }
-        else if (args[0][0] == `6`) {
+getConfigData(configFile, (configData) => {
+    let instanceURL = configData.instanceURL
+    let items = configData.contentZuids.items
+
+    for (let zuid in items) {
+        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+            if (!error && response.statusCode === 200) {
+                createMDForJSON(JSON.parse(body)['data'], items[zuid])
+            }
+        })
+    }
+    let arrays = configData.contentZuids.arrays
+    for (let zuid in arrays) {
+        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
             let json = JSON.parse(body)
-            let output = `---\n`
             let final = {}
+
             // first, we refine the array so we only have the latest version of each item
-            for (var key in json['data']) {
+            for (let key in json['data']) {
+                
                 let dict = json['data'][key]
                 let z = dict['_item_zuid']
                 let version = dict['_version']
+               
+
                 if (z in final) {
-                  if (final[z]['_version'] < version) {
-                    final[z] = dict
-                  }
-                }
+                    if (final[z]['_version'] < version) {
+                        final[z] = dict
+                    }
+                    
+                } 
                 else {
-                  final[z] = dict
+                    final[z] = dict
                 }
             }
-            // now, final is a dictionary that stores the zuid of each item. 
+
+            // now, final is a dictionary that stores the zuid of each item.
             for (let key in final) {
-              // lets now take each item of json and create the markdown file
-              createMDForJSON(final[key], `${args[1]}/${final[key]['_meta_title']}.md`)
+                // lets now take each item of json and create the markdown file
+                
+                createMDForJSON(final[key], `${arrays[zuid]}/${final[key]['_meta_title']}.md`)
             }
+
         }
+        })
+
     }
+    
 })
+
+
+
+function getConfigData(configFile, cb) {
+    let extension = configFile.substr(configFile.lastIndexOf('.') + 1, configFile.length)
+    if (extension === 'toml') {
+        const toml = require('toml')
+
+        fs.readFile(configFile, 'utf8', (err, contents) => {
+            if (err) {
+                console.log(`${chalk.white.bgRed('Failed')}: fs error in reading your file
+                Error Output: `)
+                console.log(err)
+                process.exit(1)
+            }
+            let data = contents
+            data = `---${extension}\n${contents}`
+            console.log(data)
+            cb(matter(data, {
+                engines: {
+                    toml: toml.parse.bind(toml)
+                }
+            }).data)
+        })
+        } 
+    else {
+        if (extension === 'json' || extension === 'yaml') {}
+        else { console.log(`Your File Extension ${extension} has not been tested, trying to read anyways`) }
+        fs.readFile(configFile, 'utf8', (err, contents) => {
+            if (err) {
+                console.log(`${chalk.white.bgRed('Failed')}: fs error in reading your file
+                Error Output: `)
+                console.log(err)
+                process.exit(1)
+            }
+            let data = contents
+            data = `---${extension}\n${contents}`
+            cb(matter(data).data)
+        })
+    }
+}
+
+
+function createMDForJSON (json, fileName) {
+  let output = `---\n`
+
+  for (let k in json) {
+    let key = k
+    if (key[0] === '`') {
+      key = key.substr(1)
+    }
+    key = key.replace(/(?:\r\n|\r|\n)/g, '<br>')
+    output += `${key}: ${json[key]}\n`
+  }
+  output += '---'
+  let directory = fileName.substring(0, fileName.lastIndexOf('/'))
+  if (directory === '') { directory = '.' }
+  mkdirp(directory, (err) => {
+    if (err) {
+      console.log(err)
+      process.exit(1)
+    }
+    fs.writeFile(fileName, output, (err) => {
+      if (err) {
+        return console.log(err)
+      }
+      if (verbose) {console.log(`Markdown File Created at ${chalk.white.bgMagenta(fileName)}`)}
+    })
+  })
+}
+

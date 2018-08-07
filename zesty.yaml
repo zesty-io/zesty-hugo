@@ -1,0 +1,8 @@
+instanceURL: http://burger.zesty.site
+contentZuids:
+  items:
+    7-b74a74-wjsq8t: content/events/_index.md
+    7-a4b6ac-bc4n0q: content/about.md
+    7-4ad498-k2cldb: content/_index.md
+  arrays:
+    6-8d6f30-zc84qx: content/events

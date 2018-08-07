@@ -2,12 +2,13 @@
     "instanceURL" : "http://burger.zesty.site",
     "contentZuids" : {
         "arrays": {
-            "6-34238974" : "content/events",
-            "6-43242343" : "content/menu"
+            "6-8d6f30-zc84qx" : "content/events/",
+            "6-4ea27c-45qz75" : "content/coupons/"
         },
         "items" : {
-            "7-43288479" : "content/about.md",
-            "7-48237482" : "content/_index.md"
+            "7-a4b6ac-bc4n0q" : "content/about.md",
+            "7-4ad498-k2cldb" : "content/_index.md",
+            "7-b74a74-wjsq8t" : "content/events/_index.md"
         }
     }
 }
