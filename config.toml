@@ -6,8 +6,8 @@ sectionPagesMenu = "main"
 [menu]
 
   [[menu.main]]
-    identifier = "homepage"
-    name = "homepage"
+    identifier = "home"
+    name = "home"
     url = "/"
     weight = 100
 
@@ -18,32 +18,8 @@ sectionPagesMenu = "main"
     weight = 101
 
   [[menu.main]]
-    identifier = "locations"
-    name = "locations"
-    url = "/locations/"
-    weight = 102
-    
-  [[menu.main]]
     identifier = "events"
     name = "events"
     url = "/events/"
-    weight = 103
-
-  [[menu.main]]
-    identifier = "menu"
-    name = "menu"
-    url = "/menu/"
-    weight = 104
-
-  [[menu.main]]
-    identifier = "blog"
-    name = "blog"
-    url = "/blog/"
-    weight = 105
-
-  [[menu.main]]
-    identifier = "careers"
-    name = "careers"
-    url = "/careers/"
-    weight = 106
+    weight = 102
 
