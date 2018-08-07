@@ -27,89 +27,102 @@ else {
 
 getConfigData(configFile, (configData) => {
     let instanceURL = configData.instanceURL
-    let items = configData.contentZuids.items
 
-    for (let zuid in items) {
-        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                createMDForJSON(JSON.parse(body)['data'], items[zuid])
+    if ("contentZuids" in configData) {
+        if (verbose) { console.log(`${chalk.white.bgBlue(`Content Zuids Field Found`)}`) }
+        if ("items" in configData.contentZuids) {
+            if (verbose) { console.log(`${chalk.white.bgBlue(`Items @ Content Zuids Field Found`)}`) }
+            let items = configData.contentZuids.items
+
+            for (let zuid in items) {
+                request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+                    if (!error && response.statusCode === 200) {
+                        createMDForJSON(JSON.parse(body)['data'], items[zuid])
+                    }
+                })
             }
-        })
-    }
-    
-    let arrays = configData.contentZuids.arrays
-    for (let zuid in arrays) {
-        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-            let json = JSON.parse(body)
-            let final = filterArray(json)
-
-            // now, final is a dictionary that stores the zuid of each item.
-            for (let key in final) {
-                // lets now take each item of json and create the markdown file
-                
-                createMDForJSON(final[key], `${arrays[zuid]}/${final[key]['_meta_title']}.md`)
-            }
-
         }
-        })
+        if ("arrays" in configData.contentZuids) {
+            if (verbose) { console.log(`${chalk.white.bgBlue(`Arrays @ Content Zuids Field Found`)}`) }
+            let arrays = configData.contentZuids.arrays
+            for (let zuid in arrays) {
+                request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+                if (!error && response.statusCode === 200) {
+                    let json = JSON.parse(body)
+                    let final = filterArray(json)
 
-    }
+                    // now, final is a dictionary that stores the zuid of each item.
+                    for (let key in final) {
+                        // lets now take each item of json and create the markdown file
+                        
+                        createMDForJSON(final[key], `${arrays[zuid]}/${final[key]['_meta_title']}.md`)
+                    }
 
-    let customEndpoints = configData.endpoints.custom
-    for (let endpoint in customEndpoints) {
-        request(`${instanceURL}/-/custom/${endpoint}`, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                let directory = customEndpoints[endpoint].substring(0, customEndpoints[endpoint].lastIndexOf('/'))
-                if (directory === '') { directory = '.' }
-                mkdirp(directory, (err) => {
-                    fs.writeFile(customEndpoints[endpoint], body, (err) => {
-                        if (err) {
-                            return console.log(err)
-                        }
-                        if (verbose) {console.log(`File Created at ${chalk.white.bgMagenta(customEndpoints[endpoint])}`)}
-                    })
-                })
-            }
-        })
-    }
-
-    let itemEndpoints = configData.endpoints.items
-    for (let zuid in itemEndpoints) {
-        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                let directory = itemEndpoints[zuid].substring(0, itemEndpoints[zuid].lastIndexOf('/'))
-                if (directory === '') { directory = '.' }
-                mkdirp(directory, (err) => {
-                    fs.writeFile(itemEndpoints[zuid], body, (err) => {
-                        if (err) {
-                            return console.log(err)
-                        }
-                        if (verbose) {console.log(`JSON File Created at ${chalk.white.bgMagenta(itemEndpoints[zuid])}`)}
-                    })
-                })
-            }
-        })
-    }
-
-    let arrayEndpoints = configData.endpoints.arrays
-    for (let zuid in arrayEndpoints) {
-        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                
-                let json = filterArray(JSON.parse(body))
-                for (let key in json) {
-                    createJSONFile(json[key], `${arrayEndpoints[zuid]}/${json[key]['_meta_title']}.json`)
                 }
+                })
+
             }
-        })
+        }
     }
-
-
-
-
     
-    
+    if ("endpoints" in configData) {
+        if (verbose) { console.log(`${chalk.white.bgBlue(`Endpoints Field Found`)}`) }
+        if ("custom" in configData.endpoints) {
+            if (verbose) { console.log(`${chalk.white.bgBlue(`Custom @ Endpoints Field Found`)}`) }
+            let customEndpoints = configData.endpoints.custom
+            for (let endpoint in customEndpoints) {
+                request(`${instanceURL}/-/custom/${endpoint}`, (error, response, body) => {
+                    if (!error && response.statusCode === 200) {
+                        let directory = customEndpoints[endpoint].substring(0, customEndpoints[endpoint].lastIndexOf('/'))
+                        if (directory === '') { directory = '.' }
+                        mkdirp(directory, (err) => {
+                            fs.writeFile(customEndpoints[endpoint], body, (err) => {
+                                if (err) {
+                                    return console.log(err)
+                                }
+                                if (verbose) {console.log(`File Created at ${chalk.white.bgMagenta(customEndpoints[endpoint])}`)}
+                            })
+                        })
+                    }
+                })
+            }
+        }
+        if ("items" in configData.endpoints) {
+            if (verbose) { console.log(`${chalk.white.bgBlue(`Items @ Endpoints Field Found`)}`) }
+            let itemEndpoints = configData.endpoints.items
+            for (let zuid in itemEndpoints) {
+                request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+                    if (!error && response.statusCode === 200) {
+                        let directory = itemEndpoints[zuid].substring(0, itemEndpoints[zuid].lastIndexOf('/'))
+                        if (directory === '') { directory = '.' }
+                        mkdirp(directory, (err) => {
+                            fs.writeFile(itemEndpoints[zuid], body, (err) => {
+                                if (err) {
+                                    return console.log(err)
+                                }
+                                if (verbose) {console.log(`JSON File Created at ${chalk.white.bgMagenta(itemEndpoints[zuid])}`)}
+                            })
+                        })
+                    }
+                })
+            }
+        }
+        if ("arrays" in configData.endpoints) {
+            if (verbose) { console.log(`${chalk.white.bgBlue(`Arrays @ Endpoints Field Found`)}`) }
+            let arrayEndpoints = configData.endpoints.arrays
+            for (let zuid in arrayEndpoints) {
+                request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+                    if (!error && response.statusCode === 200) {
+                        
+                        let json = filterArray(JSON.parse(body))
+                        for (let key in json) {
+                            createJSONFile(json[key], `${arrayEndpoints[zuid]}/${json[key]['_meta_title']}.json`)
+                        }
+                    }
+                })
+            }
+        }
+    }
 })
 
 function createJSONFile(json, filePath) {

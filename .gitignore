@@ -1,1 +1,4 @@
 zesty/tmp
+zesty/content
+zesty/data
+.DS_Store
