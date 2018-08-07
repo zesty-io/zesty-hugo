@@ -6,4 +6,11 @@ contentZuids:
     7-a4b6ac-bc4n0q: "content/about.md"
     7-4ad498-k2cldb: "content/_index.md"
     7-b74a74-wjsq8t : "content/events/_index.md"
+endpoints:
+  arrays: # only zuid
+    6-4ea27c-45qz75: data/coupons
+  items:
+    7-b74a74-wjsq8t: data/eventIndex.json
+  custom: # extension required (except .json)
+    menulist.json: "data/menu.json"
 instanceURL: "http://burger.zesty.site"

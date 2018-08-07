@@ -36,31 +36,13 @@ getConfigData(configFile, (configData) => {
             }
         })
     }
+    
     let arrays = configData.contentZuids.arrays
     for (let zuid in arrays) {
         request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
         if (!error && response.statusCode === 200) {
             let json = JSON.parse(body)
-            let final = {}
-
-            // first, we refine the array so we only have the latest version of each item
-            for (let key in json['data']) {
-                
-                let dict = json['data'][key]
-                let z = dict['_item_zuid']
-                let version = dict['_version']
-               
-
-                if (z in final) {
-                    if (final[z]['_version'] < version) {
-                        final[z] = dict
-                    }
-                    
-                } 
-                else {
-                    final[z] = dict
-                }
-            }
+            let final = filterArray(json)
 
             // now, final is a dictionary that stores the zuid of each item.
             for (let key in final) {
@@ -73,10 +55,100 @@ getConfigData(configFile, (configData) => {
         })
 
     }
+
+    let customEndpoints = configData.endpoints.custom
+    for (let endpoint in customEndpoints) {
+        request(`${instanceURL}/-/custom/${endpoint}`, (error, response, body) => {
+            if (!error && response.statusCode === 200) {
+                let directory = customEndpoints[endpoint].substring(0, customEndpoints[endpoint].lastIndexOf('/'))
+                if (directory === '') { directory = '.' }
+                mkdirp(directory, (err) => {
+                    fs.writeFile(customEndpoints[endpoint], body, (err) => {
+                        if (err) {
+                            return console.log(err)
+                        }
+                        if (verbose) {console.log(`File Created at ${chalk.white.bgMagenta(customEndpoints[endpoint])}`)}
+                    })
+                })
+            }
+        })
+    }
+
+    let itemEndpoints = configData.endpoints.items
+    for (let zuid in itemEndpoints) {
+        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+            if (!error && response.statusCode === 200) {
+                let directory = itemEndpoints[zuid].substring(0, itemEndpoints[zuid].lastIndexOf('/'))
+                if (directory === '') { directory = '.' }
+                mkdirp(directory, (err) => {
+                    fs.writeFile(itemEndpoints[zuid], body, (err) => {
+                        if (err) {
+                            return console.log(err)
+                        }
+                        if (verbose) {console.log(`JSON File Created at ${chalk.white.bgMagenta(itemEndpoints[zuid])}`)}
+                    })
+                })
+            }
+        })
+    }
+
+    let arrayEndpoints = configData.endpoints.arrays
+    for (let zuid in arrayEndpoints) {
+        request(`${instanceURL}/-/basic-content/${zuid}.json`, (error, response, body) => {
+            if (!error && response.statusCode === 200) {
+                
+                let json = filterArray(JSON.parse(body))
+                for (let key in json) {
+                    createJSONFile(json[key], `${arrayEndpoints[zuid]}/${json[key]['_meta_title']}.json`)
+                }
+            }
+        })
+    }
+
+
+
+
+    
     
 })
 
+function createJSONFile(json, filePath) {
+    let data = JSON.stringify(json)
+    let directory = filePath.substring(0, filePath.lastIndexOf('/'))
+        if (directory === '') { directory = '.' }
+        mkdirp(directory, (err) => {
+            fs.writeFile(filePath, data, (err) => {
+                if (err) {
+                    return console.log(err)
+                }
+                if (verbose) {console.log(`JSON File Created at ${chalk.white.bgMagenta(`${filePath}.json`)}`)}
+            })
+        })
+}
+/// inputObj in the form {data: {//}}
+function filterArray(inputObj) {
+    // first, we refine the array so we only have the latest version of each item
+    let json = inputObj
+    let final = {}
+    for (let key in json['data']) {
+        
+        let dict = json['data'][key]
+        let z = dict['_item_zuid']
+        let version = dict['_version']
+        
 
+        if (z in final) {
+            if (final[z]['_version'] < version) {
+                final[z] = dict
+            }
+            
+        } 
+        else {
+            final[z] = dict
+        }
+    }
+    return final
+}
 
 function getConfigData(configFile, cb) {
     let extension = configFile.substr(configFile.lastIndexOf('.') + 1, configFile.length)
@@ -92,7 +164,7 @@ function getConfigData(configFile, cb) {
             }
             let data = contents
             data = `---${extension}\n${contents}`
-            console.log(data)
+
             cb(matter(data, {
                 engines: {
                     toml: toml.parse.bind(toml)
