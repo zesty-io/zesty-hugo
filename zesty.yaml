@@ -6,3 +6,7 @@ contentZuids:
     7-4ad498-k2cldb: content/_index.md
   arrays:
     6-8d6f30-zc84qx: content/events
+    6-9bfe5c-ntqxrs: content/locations
+endpoints:
+  custom:
+    eventslist: data/events.json

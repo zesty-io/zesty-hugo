@@ -1,46 +1,19 @@
-{  
-    "data":[  
-       {  
-          "`parent_zuid`":"7-b74a74-wjsq8t",
-          "sort":1,
-          "_item_zuid":"7-6a0c3ae-dz5cmr",
-          "_version_zuid":"9-6bc0d63-h20nt2",
-          "_version":7,
-          "_lang":1,
-          "_created_at":"2018-07-31 17:24:51",
-          "_created_by_user_zuid":"5-b4d1c4d6ca-hzfn90",
-          "_meta_link_text":"Something",
-          "_meta_title":"Something",
-          "_meta_description":null,
-          "_meta_keywords":null,
-          "name":"Oktoberfest",
-          "deleted1":null,
-          "date":"2018-07-13 17:02:08",
-          "description_old":"\u003Cp\u003EIts gonna be lit, brah\u003C\/p\u003E",
-          "calendar_description":"Its gonna be lit, brah",
-          "uuid":"9b9a9cc8-384b-450a-bdd5-712487521ce9",
-          "description":"Its gonna be lit, brah"
-       },
-       {  
-          "`parent_zuid`":"7-b74a74-wjsq8t",
-          "sort":1,
-          "_item_zuid":"7-6aafa44-5ch2qb",
-          "_version_zuid":"9-6bc0d75-dvcgv0",
-          "_version":3,
-          "_lang":1,
-          "_created_at":"2018-07-31 17:25:09",
-          "_created_by_user_zuid":"5-b4d1c4d6ca-hzfn90",
-          "_meta_link_text":"Pancake Day",
-          "_meta_title":"Pancake Day",
-          "_meta_description":"That\u0027s right, for a day, ZestyBurger will become ZestyPancakes! Why? Who Knows!!",
-          "_meta_keywords":null,
-          "name":"Pancake Day",
-          "deleted1":null,
-          "date":"2018-07-20 11:32:29",
-          "description_old":"\u003Cp\u003EThat\u0027s right, for a day, ZestyBurger will become ZestyPancakes! Why? Who Knows!!\u003C\/p\u003E",
-          "calendar_description":"That\u0027s right, for a day, ZestyBurger will become ZestyPancakes! Why? Who Knows!!",
-          "uuid":"00f95fcf-78b2-4c0e-9980-78d00f72b91f",
-          "description":"That\u0027s right, for a day, ZestyBurger will become ZestyPancakes! Why? Who Knows!!"
-       }
-    ]
- }
+{
+    "events" : {
+        
+			
+					"Pancake Day" : {
+							"date" : "2018-07-20 11:32:29",
+							"description" : "That's right, for a day, ZestyBurger will become ZestyPancakes! Why? Who Knows!!",
+						"zuid" : "7-6aafa44-5ch2qb"
+						},		
+				
+					"Oktoberfest" : {
+							"date" : "2018-07-13 17:02:08",
+							"description" : "Its gonna be lit, brah",
+						"zuid" : "7-6a0c3ae-dz5cmr"
+						}		
+				
+        
+    }
+}
