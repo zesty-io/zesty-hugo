@@ -2,165 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://example.org/</link>
+    <link>https://hugo-zesty.ronakshah.net/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Jul 2018 11:32:29 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-zesty.ronakshah.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://example.org/events/pancake-day/</link>
+      <link>https://hugo-zesty.ronakshah.net/events/pancake-day/</link>
       <pubDate>Fri, 20 Jul 2018 11:32:29 +0000</pubDate>
       
-      <guid>http://example.org/events/pancake-day/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/events/pancake-day/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/events/new-subevent/</link>
+      <link>https://hugo-zesty.ronakshah.net/events/new-subevent/</link>
       <pubDate>Sat, 14 Jul 2018 12:45:30 +0000</pubDate>
       
-      <guid>http://example.org/events/new-subevent/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/events/new-subevent/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/events/oktoberfest/</link>
+      <link>https://hugo-zesty.ronakshah.net/events/oktoberfest/</link>
       <pubDate>Fri, 13 Jul 2018 17:02:08 +0000</pubDate>
       
-      <guid>http://example.org/events/oktoberfest/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/events/oktoberfest/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/events/something/</link>
+      <link>https://hugo-zesty.ronakshah.net/events/something/</link>
       <pubDate>Fri, 13 Jul 2018 17:02:08 +0000</pubDate>
       
-      <guid>http://example.org/events/something/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/events/something/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/about/</link>
+      <link>https://hugo-zesty.ronakshah.net/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/locations/las-vegas/</link>
+      <link>https://hugo-zesty.ronakshah.net/locations/las-vegas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/locations/las-vegas/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/locations/las-vegas/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/locations/san-diego/</link>
+      <link>https://hugo-zesty.ronakshah.net/locations/san-diego/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/locations/san-diego/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/locations/san-diego/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/locations/washington-dc/</link>
+      <link>https://hugo-zesty.ronakshah.net/locations/washington-dc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/locations/washington-dc/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/locations/washington-dc/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/california-burito/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/california-burito/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/california-burito/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/california-burito/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/lemonade/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/lemonade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/lemonade/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/lemonade/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/money-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/money-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/money-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/money-burger/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/vegan-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/vegan-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/vegan-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/vegan-burger/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/zesty-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/zesty-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/zesty-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/zesty-burger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cook</title>
-      <link>http://example.org/careers/cook/</link>
+      <link>https://hugo-zesty.ronakshah.net/careers/cook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/careers/cook/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/careers/cook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introducing the Zesty Burger</title>
-      <link>http://example.org/blog/introducing-the-zesty-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/blog/introducing-the-zesty-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/blog/introducing-the-zesty-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/blog/introducing-the-zesty-burger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Site Template Completed!</title>
-      <link>http://example.org/blog/site-template-completed/</link>
+      <link>https://hugo-zesty.ronakshah.net/blog/site-template-completed/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/blog/site-template-completed/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/blog/site-template-completed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Yet Another Blog Post</title>
-      <link>http://example.org/blog/yet-another-blog-post/</link>
+      <link>https://hugo-zesty.ronakshah.net/blog/yet-another-blog-post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/blog/yet-another-blog-post/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/blog/yet-another-blog-post/</guid>
       <description></description>
     </item>
     

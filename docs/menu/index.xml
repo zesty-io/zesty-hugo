@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://example.org/menu/</link>
+    <link>https://hugo-zesty.ronakshah.net/menu/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/menu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-zesty.ronakshah.net/menu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://example.org/menu/california-burito/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/california-burito/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/california-burito/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/california-burito/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/lemonade/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/lemonade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/lemonade/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/lemonade/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/money-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/money-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/money-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/money-burger/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/vegan-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/vegan-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/vegan-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/vegan-burger/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/menu/zesty-burger/</link>
+      <link>https://hugo-zesty.ronakshah.net/menu/zesty-burger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/menu/zesty-burger/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/menu/zesty-burger/</guid>
       <description></description>
     </item>
     

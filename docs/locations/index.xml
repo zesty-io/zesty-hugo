@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://example.org/locations/</link>
+    <link>https://hugo-zesty.ronakshah.net/locations/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/locations/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-zesty.ronakshah.net/locations/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://example.org/locations/las-vegas/</link>
+      <link>https://hugo-zesty.ronakshah.net/locations/las-vegas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/locations/las-vegas/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/locations/las-vegas/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/locations/san-diego/</link>
+      <link>https://hugo-zesty.ronakshah.net/locations/san-diego/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/locations/san-diego/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/locations/san-diego/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/locations/washington-dc/</link>
+      <link>https://hugo-zesty.ronakshah.net/locations/washington-dc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/locations/washington-dc/</guid>
+      <guid>https://hugo-zesty.ronakshah.net/locations/washington-dc/</guid>
       <description></description>
     </item>
     
