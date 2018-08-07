@@ -8,10 +8,23 @@
       
               <div class="collapse navbar-collapse" id="site-nav">
                     <ul class="navbar-nav ml-auto">
-
+                      {{$currentURL := .URL}}
+                      {{$home := .IsHome}}
                       {{ range .Site.Menus.main.ByWeight }}
-                    <li class="nav-item active"><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+                        {{ if in .URL $currentURL}}
+                          {{ if $home}} 
+                            {{ if eq .Name "homepage"}}
+                            <li class="nav-item active"><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+                            {{ else }}
+                            <li class="nav-item"><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+                            {{ end }}        
+                          {{ else }}
 
+                          <li class="nav-item active"><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+                          {{ end }}
+                        {{ else }}
+                        <li class="nav-item"><a href="{{.URL}}" class="nav-link">{{.Name}}</a></li>
+                        {{ end}}
                       {{ end}}
             </ul>
 

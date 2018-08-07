@@ -1,0 +1,22 @@
+{{ define "content" }}
+  
+<section class="site-section" id="section-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 site-animate mb-5">
+              <h4 class="site-sub-title">{{ .Title }}</h4>
+                <h2 class="site-primary-title display-4">{{ with .Params.title }}{{ . | safeHTML }}{{ end }}</h2>
+                <p>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+                <img src="{{.Params.image}}" alt="{{.Params.image}}" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  
+  
+{{ end }}
+
