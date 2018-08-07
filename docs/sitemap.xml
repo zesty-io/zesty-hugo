@@ -18,12 +18,22 @@
   </url>
   
   <url>
+    <loc>http://example.org/events/something/</loc>
+    <lastmod>2018-07-13T17:02:08+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/</loc>
     <lastmod>2018-07-20T11:32:29+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://example.org/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/events/</loc>
+    <lastmod>2018-07-20T11:32:29+00:00</lastmod>
   </url>
   
   <url>
@@ -34,11 +44,6 @@
   <url>
     <loc>http://example.org/tags/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/events/</loc>
-    <lastmod>2018-07-20T11:32:29+00:00</lastmod>
   </url>
   
 </urlset>
