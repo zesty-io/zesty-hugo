@@ -1,0 +1,182 @@
+
+{{define "content"}}
+
+
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 360px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <section class="site-section" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Destination</h4>
+			  <h2 class="site-primary-title display-4">{{.Params.city}}</h2>
+			  <p>{{.Params.description}}</p>
+			  <p><a href="{{.Params.landing_link}}" class="btn btn-secondary btn-lg">{{.Params.landing_link_text}}</a></p>
+			  <p><i class="fa fa-map-marker"></i> {{.Params.address}}<br>
+				  <i class="fa fa-phone"></i> {{.Params.phone_number}}</p>
+
+
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+ <div id="map"></div>
+			  <p>You can enable this feature by getting a <a href="https://cloud.google.com/maps-platform/?__utma=102347093.1732108420.1531515768.1532390950.1532390950.1&__utmb=102347093.0.10.1532390950&__utmc=102347093&__utmx=-&__utmz=102347093.1532390950.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)&__utmv=-&__utmk=132917390&_ga=2.53216360.1183605615.1532387897-1732108420.1531515768#get-started">Google Maps Key</a> and putting it in your Content Clippings</p>
+			<script>
+			  var geocoder;
+			  var map;
+				var address = "{{.Params.address}}";
+			  function initMap() {
+				  var pos = {lat: {{.Params.lat}}, lng: {{.Params.lng}} }
+				  
+				var map = new google.maps.Map(document.getElementById('map'), {
+				  zoom: 19,
+					center: pos
+				});
+				  var marker = new google.maps.Marker({position: pos, map: map})
+				  
+			  }
+		
+			initMap()
+			</script>
+			  <script src="https://maps.googleapis.com/maps/api/js?key={{.Params.key}}&callback=initMap"
+    async defer></script>
+
+			
+			</div>
+        </div>
+      </div>
+    </section>
+
+  
+    <section class="site-section" id="local-events">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Events</h4>
+			  <h2 class="site-primary-title display-4">{{.Params.events_subpage_title}}</h2>
+			  <p>{{.Params.events_subpage_description}} </p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="{{.Params.events_subpage_image}}" alt="{{.Params.events_subpage_image}}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site-section" id="events-list">
+			      <div class="container">
+{{ $data := getJSON "http://burger.zesty.site/-/custom/eventslist?location={{.Params.city}}"}}
+{{ range $data }}
+					  
+					  <div class="card">
+						  
+						  <div class="card-body">
+							  <h5 class="card-title">{{.name}}</h5>
+							  <p class="card-text">On {{.date}} at all locations worldwide.</p>
+							  <a href="/-/custom/localevent.ics?id={{._item_zuid}}&location={{.Params.city}}" class="btn btn-primary">Add to Calendar</a>
+							  <a href="{{.Permalink}}" class="btn btn-primary">View Event Page </a>
+						  </div>
+					  </div>
+	{{end}}
+		</div>
+</section>
+
+<section class="site-section" id="local-specialties">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 text-center mb-5 site-animate">
+			 <h2 class="display-4">{{.Params.menu_subpage_title}}</h2>
+            <div class="row justify-content-center">
+               <div class="col-md-7">
+				   <p class="lead">{{.Params.menu_subpage_description}}</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-12 text-center">
+           
+			 
+			<div class="tab-content text-left">
+              
+                
+              <div class="tab-pane fade show active" id="pills-local" role="tabpanel" aria-labelledby="pills-local-tab">
+                <div class="row">
+                    <h1>Local Specialties</h1>
+
+                      
+                      
+                  <div class="col-md-12 site-animate">
+                    {{ $menu := getJSON "http://burger.zesty.site/-/custom/menulist?location={{.Params.city}}"}}
+                    {{ range $menu }}
+                        <div class="media menu-item div-link">
+							<a href="{{.Permalink}}"><span class="div-link-span"></span></a>
+							
+							<img class="mr-3" src="{{.images}}" class="img-fluid" alt="{{.images}}"/>
+                          <div class="media-body">
+                            <h5 class="mt-0">{{.name}} </h5>
+                            <p>{{.description}}</p>
+                            <h6 class="text-primary menu-price">${{.price}}</h6>
+                          </div>
+                        </div>
+                        {{ end }}
+                    
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+			
+               
+         </div>
+		  
+      </div>
+   </div>
+</section>
+
+  
+    <section class="site-section" id="local-careers">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Careers</h4>
+			  <h2 class="site-primary-title display-4">{{.Params.careers_subpage_title}}</h2>
+			  <p>{{.Params.careers_subpage_description}}</p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="{{.Params.careers_subpage_image}}" alt="{{.Params.careers_subpage_image}}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site-section" id="section-events">
+			      <div class="container">
+
+                    {{ $careers := getJSON "http://burger.zesty.site/-/custom/careerslist?location={{.Params.city}}"}}
+                            {{ range $careers}}
+					  <div class="card">
+						  
+						  <div class="card-body">
+							  <h5 class="card-title">{{.title}}</h5>
+							  <p class="card-text">{{.description}}.</p>
+ <a href="{{.Permalink}}" class="btn btn-primary">View Job Page </a>
+						  </div>
+					  </div>
+	{{end}}
+		</div>
+</section>
+
+
+
+{{end}}

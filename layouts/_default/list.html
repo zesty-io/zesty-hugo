@@ -4,7 +4,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-5 site-animate mb-5">
-              <h4 class="site-sub-title">Events</h4>
+              <h4 class="site-sub-title">{{.Params._meta_title}}</h4>
                 <h2 class="site-primary-title display-4">{{ with .Params.title }}{{ . | safeHTML }}{{ end }}</h2>
                 <p>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
             </div>
@@ -17,18 +17,17 @@
       </section>
       <section class="site-section" id="section-events">
                     <div class="container">
-
+      
       {{range .Pages}}
                         
-                        <div class="card">
-                            
-                            <div class="card-body">
-                                <h5 class="card-title">{{ with .Params.name }}{{ . | safeHTML }}{{ end }}</h5>
-                                <p class="card-text">On {{ with .Params.date }}{{ . | safeHTML }}{{ end }} at all locations worldwide.</p>
-                                <a href="http://burger.zesty.site/-/custom/event.ics?id={{.Params._item_zuid}}" class="btn btn-primary">Add to Calendar</a>
-                                <a href="{{.Permalink}}" class="btn btn-primary">View Event Page </a>
-                            </div>
-                        </div>
+            <div class="card">
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ with .Params.title }}{{ . | safeHTML }}{{ end }}</h5>
+                    <p class="card-text">{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
+                    <a href="{{lower .Params.name}}" class="btn btn-primary">More Information </a> 
+                </div>
+            </div>
       {{end}}
           </div>
   </section>

@@ -13,18 +13,19 @@
             </div>
             <div class="col-md-12">
                 <div class="owl-carousel site-owl">
-					{{each location_pages as loc sort by loc.city }}
+                    {{ range .Pages }}
+                    
                     <div class="item">
                         <div class="media d-block mb-4 text-center site-media site-animate border-0">
-							<img src="{{loc.image.getImage()}}" alt="Free Template by colorlib.com" class="img-fluid">
+							<img src="{{.Params.image}}" alt="Free Template by colorlib.com" class="img-fluid">
                             <div class="media-body p-md-5 p-4">
-								<h5 class="mt-0 h4">{{ loc.city }} </h5>
-								<p class="mb-4"> {{loc.address}}</p>
-								<p class="mb-0"><a href="{{loc.getUrl()}}" class="btn btn-primary btn-sm">Visit Site</a></p>
+								<h5 class="mt-0 h4">{{ .Params.city }} </h5>
+								<p class="mb-4"> {{.Params.address}}</p>
+								<p class="mb-0"><a href="{{.Permalink}}" class="btn btn-primary btn-sm">Visit Site</a></p>
                             </div>
                         </div>
                     </div>
-					{{end-each}}
+					{{end}}
                 </div>
             </div>
         </div>

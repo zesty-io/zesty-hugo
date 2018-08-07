@@ -7,7 +7,7 @@
                 <h2 class="site-primary-title display-4">{{ with .Params.name }}{{ . | safeHTML }}{{ end }}</h2>
                 <h3>{{ with .Params.date }}{{ . | safeHTML }}{{ end }}</h3>
                 <p>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
-                <p><a href="{{ with .Params.link_destination }}{{ . | safeHTML }}{{ end }}" class="btn btn-secondary btn-lg">{{ with .Params.link_title }}{{ . | safeHTML }}{{ end }}</a></p>
+                <p><a href="{{ with .Permalink }}{{ . | safeHTML }}{{ end }}" class="btn btn-secondary btn-lg">{{ with .Params.link_title }}{{ . | safeHTML }}{{ end }}</a></p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">

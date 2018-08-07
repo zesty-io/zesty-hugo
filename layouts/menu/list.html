@@ -1,0 +1,54 @@
+{{ define "content" }}
+<section class="site-section" id="section-menu">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center mb-5 site-animate">
+				<h2 class="display-4"> {{.Params.title}} </h2>
+				<div class="row justify-content-center">
+					<div class="col-md-7">
+						<p class="lead"> {{.Params.description}} </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 text-center">
+				<ul class="nav site-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
+					{{/* each menu_categories as mc sort by mc.sort_order */}} 
+					<li class="nav-item site-animate">
+						<a class="nav-link  {{/* /* if {mc._index} == 0*/}} active  {{/* /*end-if*/}} " id=" {{/* /* mc.path_part*/}} " data-toggle="pill" href="#pills- {{/* /* mc.path_part*/}} " role="tab" aria-controls="pills- {{/* /* mc.path_part*/}} " aria-selected="true"> {{/* /* mc.title*/}} </a>
+					</li>
+					 {{/* /* end */}} 
+				</ul>
+				
+				<div class="tab-content text-left">
+					
+					 {{/* /* each menu_categories as mc sort by mc.sort_order */}} 
+					<div class="tab-pane fade  {{/* /* if {mc._index} == 0*/}} show active {{/* /* end-if*/}} " id="pills- {{/* /* mc.path_part*/}} " role="tabpanel" aria-labelledby="pills- {{/* /* mc.path_part*/}} -tab">
+						<div class="row">
+                             {{/* /* each menu_items as mi where mi.category = '{mc.zuid}' sort by mi.name */}} 
+                             {{ range .Pages }}
+							<div class="col-md-6 site-animate">
+								<div class="media menu-item div-link">
+									<a href=" {{ .Permalink }} "><span class="div-link-span"></span></a>
+									<img class="mr-3" src=" {{ .Params.image }} " class="img-fluid" alt=" {{/* /* mc.image.getimagetitle()*/}} "/>
+									<div class="media-body">
+										<h5 class="mt-0"> {{ .Params.name }}   </h5>
+										<p> {{ .Params.description }} </p>
+										<h6 class="text-primary menu-price"> {{ .Params.price }} </h6>
+									</div>
+								</div>
+                            </div>
+                            {{ end }}
+							 {{/* end-each*/}} 
+						</div>
+					</div>
+					 {{/* end-each*/}} 
+					
+				</div>
+				
+				
+			</div>
+			
+		</div>
+	</div>
+</section>
+ {{ end }} 
