@@ -56,5 +56,113 @@
       <description></description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://example.org/locations/las-vegas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/locations/las-vegas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/locations/san-diego/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/locations/san-diego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/locations/washington-dc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/locations/washington-dc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/menu/california-burito/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/menu/california-burito/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/menu/lemonade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/menu/lemonade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/menu/money-burger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/menu/money-burger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/menu/vegan-burger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/menu/vegan-burger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/menu/zesty-burger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/menu/zesty-burger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cook</title>
+      <link>http://example.org/careers/cook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/careers/cook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Introducing the Zesty Burger</title>
+      <link>http://example.org/blog/introducing-the-zesty-burger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/introducing-the-zesty-burger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Site Template Completed!</title>
+      <link>http://example.org/blog/site-template-completed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/site-template-completed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yet Another Blog Post</title>
+      <link>http://example.org/blog/yet-another-blog-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/yet-another-blog-post/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

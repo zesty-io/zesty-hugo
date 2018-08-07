@@ -27,10 +27,7 @@
                         
                       
                         
-                          
-
-                          <li class="nav-item active"><a href="/about/" class="nav-link">about</a></li>
-                          
+                        <li class="nav-item"><a href="/about/" class="nav-link">about</a></li>
                         
                       
                         
@@ -60,23 +57,184 @@
           </nav>
       
     
-    
-<section class="site-section" id="section-about">
-        <div class="container">
-                    <div class="row">
-            <div class="col-md-5 site-animate mb-5">
-                <h2 class="site-primary-title display-4"></h2>
-                <h3></h3>
-                <p></p>
-                <p><a href="http://example.org/about/" class="btn btn-secondary btn-lg"></a></p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
-              <img src="" alt="Free Template by colorlib.com" class="img-fluid">
-            </div>
+
+
+<style>
+       
+      #map {
+        height: 360px;
+      }
+       
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <section class="site-section" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Destination</h4>
+			  <h2 class="site-primary-title display-4">Washington, DC</h2>
+			  <p>&lt;p&gt;fsd&lt;/p&gt;</p>
+			  <p><a href="https://ronakshah.net" class="btn btn-secondary btn-lg">WOAH</a></p>
+			  <p><i class="fa fa-map-marker"></i> 1600 Pennsylvania Ave NW, Washington, DC 20500<br>
+				  <i class="fa fa-phone"></i> </p>
+
+
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+ <div id="map"></div>
+			  <p>You can enable this feature by getting a <a href="https://cloud.google.com/maps-platform/?__utma=102347093.1732108420.1531515768.1532390950.1532390950.1&__utmb=102347093.0.10.1532390950&__utmc=102347093&__utmx=-&__utmz=102347093.1532390950.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)&__utmv=-&__utmk=132917390&_ga=2.53216360.1183605615.1532387897-1732108420.1531515768#get-started">Google Maps Key</a> and putting it in your Content Clippings</p>
+			<script>
+			  var geocoder;
+			  var map;
+				var address = "1600 Pennsylvania Ave NW, Washington, DC 20500";
+			  function initMap() {
+				  var pos = {lat:  38.8977 , lng:  -77.0365  }
+				  
+				var map = new google.maps.Map(document.getElementById('map'), {
+				  zoom: 19,
+					center: pos
+				});
+				  var marker = new google.maps.Marker({position: pos, map: map})
+				  
+			  }
+		
+			initMap()
+			</script>
+			  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+    async defer></script>
+
+			
+			</div>
+        </div>
+      </div>
+    </section>
+
+  
+    <section class="site-section" id="local-events">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Events</h4>
+			  <h2 class="site-primary-title display-4">events</h2>
+			  <p>yeet </p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="3-6a0b754-56diw" alt="3-6a0b754-56diw" class="img-fluid">
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <section class="site-section" id="events-list">
+			      <div class="container">
+
+
+					  
+					  <div class="card">
+						  
+						  <div class="card-body">
+							  <h5 class="card-title"></h5>
+							  <p class="card-text">On  at all locations worldwide.</p>
+							  <a href="/-/custom/localevent.ics?id=&location=" class="btn btn-primary">Add to Calendar</a>
+							  <a href="" class="btn btn-primary">View Event Page </a>
+						  </div>
+					  </div>
+	
+		</div>
+</section>
+
+<section class="site-section" id="local-specialties">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 text-center mb-5 site-animate">
+			 <h2 class="display-4">foodss</h2>
+            <div class="row justify-content-center">
+               <div class="col-md-7">
+				   <p class="lead">fa</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-12 text-center">
+           
+			 
+			<div class="tab-content text-left">
+              
+                
+              <div class="tab-pane fade show active" id="pills-local" role="tabpanel" aria-labelledby="pills-local-tab">
+                <div class="row">
+                    <h1>Local Specialties</h1>
+
+                      
+                      
+                  <div class="col-md-12 site-animate">
+                    
+                    
+                        <div class="media menu-item div-link">
+							<a href=""><span class="div-link-span"></span></a>
+							
+							<img class="mr-3" src="" class="img-fluid" alt=""/>
+                          <div class="media-body">
+                            <h5 class="mt-0"> </h5>
+                            <p></p>
+                            <h6 class="text-primary menu-price">$</h6>
+                          </div>
+                        </div>
+                        
+                    
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+			
+               
+         </div>
+		  
+      </div>
+   </div>
+</section>
+
+  
+    <section class="site-section" id="local-careers">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Careers</h4>
+			  <h2 class="site-primary-title display-4">dsjkfdslk</h2>
+			  <p>sdkljfdksl</p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="3-6a1e238-laq5i" alt="3-6a1e238-laq5i" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site-section" id="section-events">
+			      <div class="container">
+
+                    
+                            
+					  <div class="card">
+						  
+						  <div class="card-body">
+							  <h5 class="card-title"></h5>
+							  <p class="card-text">.</p>
+ <a href="" class="btn btn-primary">View Job Page </a>
+						  </div>
+					  </div>
+	
+		</div>
+</section>
+
+
+
 
      
     <footer class="site-footer site-bg-dark site-section">

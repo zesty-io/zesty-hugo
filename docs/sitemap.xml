@@ -32,8 +32,56 @@
   </url>
   
   <url>
+    <loc>http://example.org/blog/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/careers/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/events/</loc>
     <lastmod>2018-07-20T11:32:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/locations/las-vegas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/locations/san-diego/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/locations/washington-dc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/locations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/menu/california-burito/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/menu/lemonade/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/menu/money-burger/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/menu/vegan-burger/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/menu/zesty-burger/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/menu/</loc>
   </url>
   
   <url>
@@ -42,8 +90,24 @@
   </url>
   
   <url>
+    <loc>http://example.org/careers/cook/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/blog/introducing-the-zesty-burger/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/blog/site-template-completed/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/blog/yet-another-blog-post/</loc>
   </url>
   
 </urlset>

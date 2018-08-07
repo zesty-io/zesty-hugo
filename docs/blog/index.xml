@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>http://example.org/blog/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing the Zesty Burger</title>
+      <link>http://example.org/blog/introducing-the-zesty-burger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/introducing-the-zesty-burger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Site Template Completed!</title>
+      <link>http://example.org/blog/site-template-completed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/site-template-completed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Yet Another Blog Post</title>
+      <link>http://example.org/blog/yet-another-blog-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/yet-another-blog-post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

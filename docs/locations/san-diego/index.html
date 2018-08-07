@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/site.css"/>
+<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+    </head>
+
+    <body>
+
+   
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">Zesty Burger</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+              </button>
+      
+              <div class="collapse navbar-collapse" id="site-nav">
+                    <ul class="navbar-nav ml-auto">
+                      
+                      
+                      
+                        
+                        <li class="nav-item"><a href="/" class="nav-link">homepage</a></li>
+                        
+                      
+                        
+                        <li class="nav-item"><a href="/about/" class="nav-link">about</a></li>
+                        
+                      
+                        
+                        <li class="nav-item"><a href="/locations/" class="nav-link">locations</a></li>
+                        
+                      
+                        
+                        <li class="nav-item"><a href="/events/" class="nav-link">events</a></li>
+                        
+                      
+                        
+                        <li class="nav-item"><a href="/menu/" class="nav-link">menu</a></li>
+                        
+                      
+                        
+                        <li class="nav-item"><a href="/blog/" class="nav-link">blog</a></li>
+                        
+                      
+                        
+                        <li class="nav-item"><a href="/careers/" class="nav-link">careers</a></li>
+                        
+                      
+            </ul>
+
+              </div>
+            </div>
+          </nav>
+      
+    
+
+
+<style>
+       
+      #map {
+        height: 360px;
+      }
+       
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <section class="site-section" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Destination</h4>
+			  <h2 class="site-primary-title display-4">San Diego</h2>
+			  <p>&lt;p&gt;Located in the heart of Downtown, ZestyBurger San Diego features many unique specialty items. Our most popular item is the California burrito.&lt;/p&gt;</p>
+			  <p><a href="http://burger.zesty.site/locations/usa/san-diego/california-burrito" class="btn btn-secondary btn-lg">See the California Burrito</a></p>
+			  <p><i class="fa fa-map-marker"></i> 2044 1st Ave<br>
+				  <i class="fa fa-phone"></i> (844) 469-3789</p>
+
+
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+ <div id="map"></div>
+			  <p>You can enable this feature by getting a <a href="https://cloud.google.com/maps-platform/?__utma=102347093.1732108420.1531515768.1532390950.1532390950.1&__utmb=102347093.0.10.1532390950&__utmc=102347093&__utmx=-&__utmz=102347093.1532390950.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)&__utmv=-&__utmk=132917390&_ga=2.53216360.1183605615.1532387897-1732108420.1531515768#get-started">Google Maps Key</a> and putting it in your Content Clippings</p>
+			<script>
+			  var geocoder;
+			  var map;
+				var address = "2044 1st Ave";
+			  function initMap() {
+				  var pos = {lat:  32.726631 , lng:  -117.164108  }
+				  
+				var map = new google.maps.Map(document.getElementById('map'), {
+				  zoom: 19,
+					center: pos
+				});
+				  var marker = new google.maps.Marker({position: pos, map: map})
+				  
+			  }
+		
+			initMap()
+			</script>
+			  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+    async defer></script>
+
+			
+			</div>
+        </div>
+      </div>
+    </section>
+
+  
+    <section class="site-section" id="local-events">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Events</h4>
+			  <h2 class="site-primary-title display-4">SD Events</h2>
+			  <p>Party by the beach like a cool kiddo! yeet </p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="3-6a4a02d-r719f" alt="3-6a4a02d-r719f" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site-section" id="events-list">
+			      <div class="container">
+
+
+					  
+					  <div class="card">
+						  
+						  <div class="card-body">
+							  <h5 class="card-title"></h5>
+							  <p class="card-text">On  at all locations worldwide.</p>
+							  <a href="/-/custom/localevent.ics?id=&location=" class="btn btn-primary">Add to Calendar</a>
+							  <a href="" class="btn btn-primary">View Event Page </a>
+						  </div>
+					  </div>
+	
+		</div>
+</section>
+
+<section class="site-section" id="local-specialties">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 text-center mb-5 site-animate">
+			 <h2 class="display-4">Zesty Menu</h2>
+            <div class="row justify-content-center">
+               <div class="col-md-7">
+				   <p class="lead">From the blind texts themselves, here is our award-winning menu. With options for everyone, ZestyBurger caters to everyone.&lt;br /&gt;&lt;br /&gt;</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-12 text-center">
+           
+			 
+			<div class="tab-content text-left">
+              
+                
+              <div class="tab-pane fade show active" id="pills-local" role="tabpanel" aria-labelledby="pills-local-tab">
+                <div class="row">
+                    <h1>Local Specialties</h1>
+
+                      
+                      
+                  <div class="col-md-12 site-animate">
+                    
+                    
+                        <div class="media menu-item div-link">
+							<a href=""><span class="div-link-span"></span></a>
+							
+							<img class="mr-3" src="" class="img-fluid" alt=""/>
+                          <div class="media-body">
+                            <h5 class="mt-0"> </h5>
+                            <p></p>
+                            <h6 class="text-primary menu-price">$</h6>
+                          </div>
+                        </div>
+                        
+                    
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+			
+               
+         </div>
+		  
+      </div>
+   </div>
+</section>
+
+  
+    <section class="site-section" id="local-careers">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 site-animate mb-5">
+            <h4 class="site-sub-title">Careers</h4>
+			  <h2 class="site-primary-title display-4">Zesty Openings</h2>
+			  <p>Join your local cool kids group</p>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
+			  <img src="3-6a35003-f1yju" alt="3-6a35003-f1yju" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="site-section" id="section-events">
+			      <div class="container">
+
+                    
+                            
+					  <div class="card">
+						  
+						  <div class="card-body">
+							  <h5 class="card-title"></h5>
+							  <p class="card-text">.</p>
+ <a href="" class="btn btn-primary">View Job Page </a>
+						  </div>
+					  </div>
+	
+		</div>
+</section>
+
+
+
+
+     
+    <footer class="site-footer site-bg-dark site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 no-site-animate">
+				  <h2 class="site-heading-2">About Us</h2>
+				  <p>The Restaurant</p>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-3 no-site-animate">
+                <div class="site-footer-widget mb-4">
+					<h2 class="site-heading-2">Fred</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">About Us</a></li>
+                    <li><a href="#" class="py-2 d-block">Chefs</a></li>
+                    <li><a href="#" class="py-2 d-block">Events</a></li>
+                    <li><a href="#" class="py-2 d-block">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-2 no-site-animate">
+                 <div class="site-footer-widget mb-4">
+					 <h2 class="site-heading-2">Useful Links</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Foods</a></li>
+                    <li><a href="#" class="py-2 d-block">Drinks</a></li>
+                    <li><a href="#" class="py-2 d-block">Breakfast</a></li>
+                    <li><a href="#" class="py-2 d-block">Brunch</a></li>
+                    <li><a href="#" class="py-2 d-block">Dinner</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-2 no-site-animate">
+                 <div class="site-footer-widget mb-4">
+					 <h2 class="site-heading-2">Other</h2>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="py-2 d-block">Foods</a></li>
+                    <li><a href="#" class="py-2 d-block">Drinks</a></li>
+                    <li><a href="#" class="py-2 d-block">Breakfast</a></li>
+                    <li><a href="#" class="py-2 d-block">Brunch</a></li>
+                    <li><a href="#" class="py-2 d-block">Dinner</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        <div class="row no-site-animate">
+           <div class="col-md-12 text-center">
+            <div class="site-footer-widget mb-4">
+              <ul class="site-footer-social list-unstyled ">
+                <li class="no-site-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li class="no-site-animate"><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+                <li class="no-site-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <p>&copy; 
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template was made by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="/js/site.js"></script>
+<script>
+    var anims = document.getElementsByClassName("site-animate");
+    for (var j =0; j<anims.length;j++) {
+        anims[j].classList.remove("site-animate");
+        j--;
+    }
+</script>
+
+    
+    </body>
+
+</html>
