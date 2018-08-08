@@ -23,10 +23,6 @@
 
 [See the Hugo Website](https://gohugo.io/getting-started/installing)
 
-### 
-
-	hugo new site YourSite
-	cd YourSite
 
 ### Installing Hugo-Zesty
 
