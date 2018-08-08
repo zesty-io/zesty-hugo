@@ -1,7 +1,7 @@
 /**
     running this project: 
     node pullfromzesty.js <config_file> [--verbose]
-    if no config file is specified, this will look for one in the current directory called zesty.json
+    if no config file is specified, this will look for one in the current directory called zesty.yaml
     config files supported: .json, .yaml, .toml
  */
 //  Imports
@@ -12,13 +12,13 @@ const matter = require('gray-matter')
 const chalk = require('chalk')
 const args = process.argv.slice(2) // get rid of the unneccesary arguments
 
-let configFile = "zesty.json"
+let configFile = "zesty.yaml"
 let verbose = (process.argv.indexOf('--verbose') != -1) ? true : false
 
 if (verbose) { console.log(chalk.black.bgYellow('Verbose Mode On')) }
 
 if (!args[0]) {
-    if (verbose) { console.log(`No specified config, trying default ${chalk.white.bgGreen("zesty.json")}`) }
+    if (verbose) { console.log(`No specified config, trying default ${chalk.white.bgGreen("zesty.yaml")}`) }
 }
 else {
     if (verbose) { console.log(`Using specified config file ${chalk.white.bgGreen(args[0])}`) }
