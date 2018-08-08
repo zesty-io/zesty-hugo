@@ -23,7 +23,7 @@
 
 [See the Hugo Website](https://gohugo.io/getting-started/installing)
 
-### Creating your Hugo Project
+### 
 
 	hugo new site YourSite
 	cd YourSite
@@ -44,24 +44,22 @@
 
 [See the Node.js website](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 
-#### Download the node script and install dependencies
-
-	wget https://github.com/ronakdev/hugo-project/releases/download/0.1.0/hugo-zesty.zip
-	unzip hugo-zesty.zip
-	cd hugo-zesty
+#### Clone the repository
+	git clone https://github.com/ronakdev/hugo-project/
+	cd hugo-project
 	npm install
 
 ### Usage
 
 #### Edit the `zesty.yaml` file in the hugo-zesty folder
 	vim zesty.yaml # or nano / vi / emacs
+	
 
 #### Commands
 
-- `make pullzesty` # builds `content/` folder
-- `make hugo` # simply runs hugo
-- `make hugo-server` # simply runs hugo server
-- `make` or `make all` # runs the above three commands all at once
+- `npm start` # rebuilds data from zesty.io and runs a hugo server
+- `npm run-script build-hugo` # rebuilds data from zesty.io and runs hugo to build a folder in `docs/`
+- `npm run-script all` # rebuilds data from zesty.io, runs hugo to build a folder in `docs/`, and runs a hugo server
 
 ## Current Situation of Hugo Zesty
 
@@ -74,5 +72,5 @@
 	- Must be using npm package - thus creating another dependency for the user to install
 		- potentialy could be [rewritten in go](https://github.com/ronakdev/hugo-project/issues/11)
 	- Cannot be bundled with hugo since hugo does not support run-hooks
-		- Currently bundled in a `Makefile`
+		- Currently bundled in a `NPM Package`
 	
