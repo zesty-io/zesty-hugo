@@ -21,7 +21,7 @@
           <div class="col-md-5 site-animate mb-5">
             <h4 class="site-sub-title">Destination</h4>
 			  <h2 class="site-primary-title display-4">{{.Params.city}}</h2>
-			  <p>{{.Params.description}}</p>
+			  <p>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</p>
 			  <p><a href="{{.Params.landing_link}}" class="btn btn-secondary btn-lg">{{.Params.landing_link_text}}</a></p>
 			  <p><i class="fa fa-map-marker"></i> {{.Params.address}}<br>
 				  <i class="fa fa-phone"></i> {{.Params.phone_number}}</p>
