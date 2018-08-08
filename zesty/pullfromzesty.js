@@ -18,10 +18,10 @@ let verbose = (process.argv.indexOf('--verbose') != -1) ? true : false
 if (verbose) { console.log(chalk.black.bgYellow('Verbose Mode On')) }
 
 if (!args[0]) {
-    if (verbose) { console.log(`No specified config, trying default ${chalk.white.bgMagenta("zesty.json")}`) }
+    if (verbose) { console.log(`No specified config, trying default ${chalk.white.bgGreen("zesty.json")}`) }
 }
 else {
-    if (verbose) { console.log(`Using specified config file ${chalk.white.bgMagenta(args[0])}`) }
+    if (verbose) { console.log(`Using specified config file ${chalk.white.bgGreen(args[0])}`) }
     configFile = args[0]
 }
 
@@ -80,7 +80,7 @@ getConfigData(configFile, (configData) => {
                                 if (err) {
                                     return console.log(err)
                                 }
-                                if (verbose) {console.log(`File Created at ${chalk.white.bgMagenta(customEndpoints[endpoint])}`)}
+                                if (verbose) {console.log(`File Created at ${chalk.white.bgGreen(customEndpoints[endpoint])}`)}
                             })
                         })
                     }
@@ -100,7 +100,7 @@ getConfigData(configFile, (configData) => {
                                 if (err) {
                                     return console.log(err)
                                 }
-                                if (verbose) {console.log(`JSON File Created at ${chalk.white.bgMagenta(itemEndpoints[zuid])}`)}
+                                if (verbose) {console.log(`JSON File Created at ${chalk.white.bgGreen(itemEndpoints[zuid])}`)}
                             })
                         })
                     }
@@ -134,7 +134,7 @@ function createJSONFile(json, filePath) {
                 if (err) {
                     return console.log(err)
                 }
-                if (verbose) {console.log(`JSON File Created at ${chalk.white.bgMagenta(`${filePath}.json`)}`)}
+                if (verbose) {console.log(`JSON File Created at ${chalk.white.bgGreen(`${filePath}.json`)}`)}
             })
         })
 }
@@ -226,7 +226,7 @@ function createMDForJSON (json, fileName) {
       if (err) {
         return console.log(err)
       }
-      if (verbose) {console.log(`Markdown File Created at ${chalk.white.bgMagenta(fileName)}`)}
+      if (verbose) {console.log(`Markdown File Created at ${chalk.white.bgGreen(fileName)}`)}
     })
   })
 }
