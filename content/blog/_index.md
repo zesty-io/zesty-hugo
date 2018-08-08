@@ -11,6 +11,6 @@ _meta_link_text: Blog
 _meta_title: Blog
 _meta_description: null
 _meta_keywords: null
-title: null
-description: null
+title: null # Blog
+description: null # Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.<br/><br/>We've deciphered them here.
 ---
