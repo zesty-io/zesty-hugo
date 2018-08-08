@@ -3,6 +3,7 @@
 ## Getting Started
 
 1. [Installing Hugo](#Installing-Hugo)
+2. [Creating your hugo project)(#creating-your-hugo-project)
 2. [Installing Hugo-Zesty](#Installing-Hugo-Zesty)
 3. [usage](#usage)
 
@@ -21,6 +22,11 @@
 **other platforms**
 
 [See the Hugo Website](https://gohugo.io/getting-started/installing)
+
+### Creating your Hugo Project
+
+	hugo new site YourSite
+	cd YourSite
 
 ### Installing Hugo-Zesty
 
