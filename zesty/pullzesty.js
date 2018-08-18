@@ -64,14 +64,15 @@ getConfigData(configFile, (configData) => {
             }
         }
     }
-    
+
     if ("endpoints" in configData) {
         if (verbose) { console.log(`${chalk.white.bgBlue(`Endpoints Field Found`)}`) }
         if ("custom" in configData.endpoints) {
             if (verbose) { console.log(`${chalk.white.bgBlue(`Custom @ Endpoints Field Found`)}`) }
             let customEndpoints = configData.endpoints.custom
             for (let endpoint in customEndpoints) {
-                request(`${instanceURL}/-/custom/${endpoint}`, (error, response, body) => {
+                 if (verbose) { console.log(`Requesting ${chalk.white.bgYellow(`${instanceURL}/${endpoint}.json`)}`) }
+                request(`${instanceURL}/${endpoint}.json`, (error, response, body) => {
                     if (!error && response.statusCode === 200) {
                         let directory = customEndpoints[endpoint].substring(0, customEndpoints[endpoint].lastIndexOf('/'))
                         if (directory === '') { directory = '.' }
@@ -83,6 +84,9 @@ getConfigData(configFile, (configData) => {
                                 if (verbose) {console.log(`File Created at ${chalk.white.bgGreen(customEndpoints[endpoint])}`)}
                             })
                         })
+                    }
+                    else {
+                        console.log(`${chalk.white.bgRed(`${instanceURL}/${endpoint}.json`)} could not be found`)
                     }
                 })
             }
