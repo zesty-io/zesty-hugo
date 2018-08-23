@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build-hugo": "node zesty/pullzesty.js --verbose; hugo -d docs",
-    "start": "node zesty/pullzesty.js --verbose ; hugo server -D",
-    "all": "node zesty/pullzesty.js --verbose ; hugo -d docs; hugo server -D"
+    "build-hugo": "pullzesty --verbose; hugo -d docs",
+    "start": "pullzesty --verbose ; hugo server -D",
+    "all": "pullzesty --verbose ; hugo -d docs; hugo server -D"
   },
   "repository": {
     "type": "git",
