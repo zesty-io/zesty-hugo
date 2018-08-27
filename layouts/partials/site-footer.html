@@ -1,17 +1,17 @@
-{{ range getJSON "http://burger.zesty.site/-/basic-content/7-6a4a7b1-vv84b3.json" }} <!-- TODO: Figure out how to load this locally. Not really an issue, just want to organize my files-->
+{{ range $.Site.Data.footer.data }} <!-- TODO: Figure out how to load this locally. Not really an issue, just want to organize my files-->
     <footer class="site-footer site-bg-dark site-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-4 no-site-animate">
-				  <h2 class="site-heading-2">{{.left_text_title}}</h2>
-				  <p>{{.left_text_content}}</p>
+				  <h2 class="site-heading-2">{{.content.left_text_title}}</h2>
+				  <p>{{.content.left_text_content}}</p>
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-3 no-site-animate">
                 <div class="site-footer-widget mb-4">
-					<h2 class="site-heading-2">{{.middle_left_links_title}}</h2>
+					<h2 class="site-heading-2">{{.content.middle_left_links_title}}</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">About Us</a></li>
                     <li><a href="#" class="py-2 d-block">Chefs</a></li>
@@ -22,7 +22,7 @@
               </div>
               <div class="col-md-2 no-site-animate">
                  <div class="site-footer-widget mb-4">
-					 <h2 class="site-heading-2">{{.middle_right_links_title}}</h2>
+					 <h2 class="site-heading-2">{{.content.middle_right_links_title}}</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">Foods</a></li>
                     <li><a href="#" class="py-2 d-block">Drinks</a></li>
@@ -34,7 +34,7 @@
               </div>
               <div class="col-md-2 no-site-animate">
                  <div class="site-footer-widget mb-4">
-					 <h2 class="site-heading-2">{{.right_links_title}}</h2>
+					 <h2 class="site-heading-2">{{.content.right_links_title}}</h2>
                   <ul class="list-unstyled">
                     <li><a href="#" class="py-2 d-block">Foods</a></li>
                     <li><a href="#" class="py-2 d-block">Drinks</a></li>

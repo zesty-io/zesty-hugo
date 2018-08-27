@@ -55,18 +55,4 @@
 
 - `npm start` # rebuilds data from zesty.io and runs a hugo server
 - `npm run-script build-hugo` # rebuilds data from zesty.io and runs hugo to build a folder in `docs/`
-- `npm run-script all` # rebuilds data from zesty.io, runs hugo to build a folder in `docs/`, and runs a hugo server
-
-## Current Situation of Hugo Zesty
-
-- Zesty Burger Site Implemented, BUT
- - Single Pages Render without content due to [the site engine bug](https://github.com/zesty-io/issues/issues/763)
- - Complex Pages don't work due to to real proper way to get complex data from Zesty without custom endpoints
-- JS Script gets all content / data specified + has support for custom endpoints, BUT
-	- Unintuitive way to choose pages to migrate
-		- every page and subpage must be manually specified by zuid
-	- Must be using npm package - thus creating another dependency for the user to install
-		- potentialy could be [rewritten in go](https://github.com/ronakdev/hugo-project/issues/11)
-	- Cannot be bundled with hugo since hugo does not support run-hooks
-		- Currently bundled in a `NPM Package`
-	
+- `npm run-script all` # rebuilds data from zesty.io, runs hugo to build a folder in `docs/`, and runs a hugo server	

@@ -7,13 +7,13 @@ contentZuids:
         6-524458-d5wjpw: content/events/_index.md  
         6-f5f094-ggchl1: content/careers/_index.md 
         6-2c1804-2w70lf: content/locations/_index.md  
-        6-e8ebe0-1wns63: content/menu.md   
+        6-e8ebe0-1wns63: content/menu/_index.md   
         #6-693008-j6h1nv: content/usa_locations/_index.md          
     arrays:
         6-552d64-9rp79b: content/blog
         6-8d6f30-zc84qx: content/events
-        6-9bfe5c-ntqxrs: content/location_pages
-        6-ca7ed0-bx3vpj: content/local_events
+        6-9bfe5c-ntqxrs: content/locations
+        6-ca7ed0-bx3vpj: content/events
         6-192984-tjwntl: content/careers
         6-97a8f4-td4p72: content/menu
 endpoints:
